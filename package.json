@@ -1,0 +1,13 @@
+{
+  "name": "cursive-shadow-cljs.",
+  "version": "0.0.0",
+  "scripts": {
+    "build:watch": "shadow-cljs watch script",
+    "build": "shadow-cljs release script"
+  },
+  "devDependencies": {
+    "shadow-cljs": "2.6.2",
+    "source-map-support": "0.5.9"
+  },
+  "dependencies": {}
+}

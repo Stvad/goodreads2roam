@@ -1,0 +1,4 @@
+{:deps {:aliases [:dev :test]}
+ :builds {:script {:target    :node-script
+                   :main      cursive-shadow-cljs.core/-main
+                   :output-to "lib/script.js"}}}
