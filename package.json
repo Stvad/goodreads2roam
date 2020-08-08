@@ -1,5 +1,5 @@
 {
-  "name": "cursive-shadow-cljs.",
+  "name": "goodreads2roam.",
   "version": "0.0.0",
   "scripts": {
     "build:watch": "shadow-cljs watch script",
@@ -9,5 +9,6 @@
     "shadow-cljs": "2.6.8",
     "source-map-support": "0.5.9"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }

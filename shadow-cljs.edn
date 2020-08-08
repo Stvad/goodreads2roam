@@ -1,4 +1,5 @@
-{:deps {:aliases [:dev :test]}
+{:lein true
+ :deps   {:aliases [:dev :test]}
  :builds {:script {:target    :node-script
-                   :main      cursive-shadow-cljs.core/-main
+                   :main      goodreads2roam.core/-main
                    :output-to "lib/script.js"}}}
