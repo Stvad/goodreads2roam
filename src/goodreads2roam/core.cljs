@@ -10,6 +10,10 @@
         ""
         "Usage: goodreads2roam [options] input-file output-file"
         ""
+        "Example: goodreads2roam -s read -s fiction export.csv books.md"
+        "This would take books that are in 'read' and 'fiction' shelves from 'export.csv' file"
+        "and convert only them to Roam Markdown format writing them to 'books.md' file"
+        ""
         "Options:"
         options-summary
         ""
@@ -21,7 +25,7 @@
        (string/join \newline errors)))
 
 (def cli-options
-  [["-s" "--shelf SHELF" "Shelves to include (all are included by default)"
+  [["-s" "--shelf SHELF" "Shelves to include (books from all shelves are included by default)"
     :multi true
     :default #{}
     :update-fn conj
