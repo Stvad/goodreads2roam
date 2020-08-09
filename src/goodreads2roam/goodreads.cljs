@@ -4,12 +4,10 @@
     [cljs-time.format :as time]
     [goodreads2roam.utils :refer [read-file write-file csv-list->maps]]
     [clojure.string :as s]
-    )
-  )
+    ))
 
 (defn to-stringlist [string]
-  (s/split string #", ")
-  )
+  (s/split string #", "))
 
 (defn page [name]
   (when (not-empty name)
@@ -24,7 +22,7 @@
    (str "\n" (->> " " (repeat (* 2 depth)) (apply str)) "- " val))
   )
 
-(defn author [book]
+(defn authors [book]
   (let [additional-authors (book "Additional Authors")]
     (->>
       (conj (when (not-empty additional-authors) (to-stringlist additional-authors)) (book "Author"))
@@ -74,8 +72,8 @@
   )
 
 (defn parse-title [book]
-  (let [[[full just-name _ series-name order _]] (re-seq #"(.+) (\(([^,]+),? \#(\d{1,2})\))|(.+)" (book "Title"))]
-    {:name   (or just-name full)
+  (let [[[full-name just-name _ series-name order _]] (re-seq #"(.+) (\(([^,]+),? \#(\d{1,2})\))|(.+)" (book "Title"))]
+    {:name   (or just-name full-name)
      :series series-name
      :order  order})
   )
@@ -84,7 +82,7 @@
   (let [title (parse-title book)]
     (str (bullet (page (title :name)) 0)
          (bullet (tags book))
-         (attr "author" (author book))
+         (attr "author" (authors book))
          (attr "series" (page (title :series)))
          (attr "reading status" (page (book "Exclusive Shelf")))
          (attr "link" (str "https://www.goodreads.com/book/show/" (book "Book Id")))
