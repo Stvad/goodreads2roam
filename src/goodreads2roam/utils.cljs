@@ -1,6 +1,7 @@
 (ns goodreads2roam.utils)
 
 (def fs (js/require "fs"))
+(def process (js/require "process"))
 
 (defn read-file [path]
   (.readFileSync fs path "utf8"))
@@ -12,3 +13,7 @@
   (map zipmap
        (repeat (first csv-data))
        (rest csv-data)))
+
+(defn exit [status msg]
+  (println msg)
+  (.exit process status))

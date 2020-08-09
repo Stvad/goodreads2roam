@@ -2,4 +2,4 @@
  :deps   {:aliases [:dev :test]}
  :builds {:script {:target    :node-script
                    :main      goodreads2roam.core/-main
-                   :output-to "lib/script.js"}}}
+                   :output-to "lib/goodreads2roam.js"}}}
