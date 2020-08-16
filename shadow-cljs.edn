@@ -1,5 +1,13 @@
 {:lein true
- :deps   {:aliases [:dev :test]}
- :builds {:script {:target    :node-script
-                   :main      goodreads2roam.core/-main
-                   :output-to "lib/goodreads2roam.js"}}}
+ :deps {:aliases [:dev :test]}
+ ;:source-paths ["src/main" "src/test"]
+ :builds
+       {:script {:target    :node-script
+                 :main      goodreads2roam.core/-main
+                 :output-to "lib/goodreads2roam.js"}
+        :test
+                {:target    :node-test
+                 :output-to "out/node-tests.js"
+                 :ns-regexp "-spec$"
+                 :autorun   true}}
+ }
