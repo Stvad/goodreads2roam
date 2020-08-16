@@ -81,7 +81,8 @@
 (defn book->roam [book]
   (let [title (parse-title book)]
     (str (bullet (page (title :name)) 0)
-         (bullet (tags book))
+         (attr "isa" (page "book"))
+         (bullet (tags book) 2)
          (attr "author" (authors book))
          (attr "series" (page (title :series)))
          (attr "reading status" (page (book "Exclusive Shelf")))
