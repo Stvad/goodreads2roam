@@ -1,6 +1,6 @@
 {
-  "name": "goodreads2roam.",
-  "version": "0.0.0",
+  "name": "goodreads2roam",
+  "version": "0.1.0",
   "scripts": {
     "build:watch": "shadow-cljs watch script",
     "build": "shadow-cljs release script"
@@ -10,5 +10,6 @@
     "source-map-support": "0.5.9"
   },
   "dependencies": {
-  }
+  },
+  "main": "dist/goodreads2roam.js"
 }

@@ -1,7 +1,7 @@
 (ns goodreads2roam.core
   (:require
-    [goodreads2roam.utils :refer [write-file exit]]
-    [goodreads2roam.goodreads :refer [read-books book->roam shelves]]
+    [goodreads2roam.node :refer [read-file write-file exit]]
+    [goodreads2roam.goodreads :refer [read-books book->roam shelves filter-by-shelves read-books-string]]
     [clojure.tools.cli :refer [parse-opts]]
     [clojure.string :as string]))
 
@@ -34,11 +34,9 @@
    ]
   )
 
-(defn filter-by-shelves [shelves-to-include books]
-  (filter
-    #(clojure.set/subset? shelves-to-include (set (shelves %)))
-    books)
-  )
+(defn read-books [path]
+  (let [data (read-file path)]
+    (read-books-string data)))
 
 (defn convert-books [in-file out-file shelves-to-include]
   (let [books (read-books in-file)]

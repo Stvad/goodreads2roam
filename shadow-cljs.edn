@@ -5,6 +5,16 @@
        {:script {:target    :node-script
                  :main      goodreads2roam.core/-main
                  :output-to "lib/goodreads2roam.js"}
+        :lib    {:target    :node-library
+                 :output-to "dist/goodreads2roam.js"
+                 :exports {
+                           :filterByShelves goodreads2roam.goodreads/filter-by-shelves
+                           :parseBooks goodreads2roam.goodreads/read-books-string
+                           :bookToRoam goodreads2roam.goodreads/book->roam
+                           :booksToRoam goodreads2roam.goodreads/books->roam
+                           :toJs cljs.core/clj->js
+                           }
+                 }
         :test
                 {:target    :node-test
                  :output-to "out/node-tests.js"

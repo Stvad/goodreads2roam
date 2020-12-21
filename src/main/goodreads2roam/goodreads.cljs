@@ -2,7 +2,7 @@
   (:require
     [testdouble.cljs.csv :as csv]
     [cljs-time.format :as time]
-    [goodreads2roam.utils :refer [read-file write-file csv-list->maps]]
+    [goodreads2roam.utils :refer [csv-list->maps]]
     [clojure.string :as s]
     ))
 
@@ -98,6 +98,15 @@
          ))
   )
 
-(defn read-books [path]
-  (let [data (read-file path)]
-    (csv-list->maps (csv/read-csv data))))
+(defn filter-by-shelves [shelves-to-include books]
+  (filter
+    #(clojure.set/subset? shelves-to-include (set (shelves %)))
+    books)
+  )
+
+(defn books->roam [books]
+  (clj->js (map book->roam books)))
+
+(defn read-books-string [string]
+  (csv-list->maps (csv/read-csv string)))
+
