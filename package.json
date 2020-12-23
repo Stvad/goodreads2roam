@@ -1,5 +1,6 @@
 {
   "name": "goodreads2roam",
+  "description": "A library and a CLI to convert your Goodreads export to Roam Markdown format",
   "version": "0.1.0",
   "scripts": {
     "build:watch": "shadow-cljs watch script",
@@ -11,5 +12,17 @@
   },
   "dependencies": {
   },
-  "main": "dist/goodreads2roam.js"
+  "main": "dist/goodreads2roam.js",
+  "author": {
+    "name": "Vladyslav Sitalo",
+    "url": "https://sitalo.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stvad/goodreads2roam-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Stvad/goodreads2roam-ui/issues"
+  },
+  "homepage": "https://github.com/Stvad/goodreads2roam-ui"
 }

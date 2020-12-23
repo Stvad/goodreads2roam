@@ -13,6 +13,7 @@
                            :bookToRoam goodreads2roam.goodreads/book->roam
                            :booksToRoam goodreads2roam.goodreads/books->roam
                            :toJs cljs.core/clj->js
+                           :toClj cljs.core/js->clj
                            }
                  }
         :test
