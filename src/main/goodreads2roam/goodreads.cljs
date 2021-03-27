@@ -104,6 +104,9 @@
     books)
   )
 
+(defn filter-by-shelves-list [shelves-to-include books]
+  (filter-by-shelves (set shelves-to-include) books))
+
 (defn books->roam [books]
   (clj->js (map book->roam books)))
 

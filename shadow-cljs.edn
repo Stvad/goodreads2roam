@@ -7,11 +7,16 @@
                  :output-to "lib/goodreads2roam.js"}
         :lib    {:target    :node-library
                  :output-to "dist/goodreads2roam.js"
+                 :compiler-options {
+                            :source-map true
+                            }
                  :exports {
-                           :filterByShelves goodreads2roam.goodreads/filter-by-shelves
+                           :filterByShelves goodreads2roam.goodreads/filter-by-shelves-list
                            :parseBooks goodreads2roam.goodreads/read-books-string
                            :bookToRoam goodreads2roam.goodreads/book->roam
                            :booksToRoam goodreads2roam.goodreads/books->roam
+                           :shelves goodreads2roam.goodreads/shelves
+                           :cljMap cljs.core/map
                            :toJs cljs.core/clj->js
                            :toClj cljs.core/js->clj
                            }
