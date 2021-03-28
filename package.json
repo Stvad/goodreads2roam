@@ -1,7 +1,7 @@
 {
   "name": "goodreads2roam",
   "description": "A library and a CLI to convert your Goodreads export to Roam Markdown format",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "build:watch": "shadow-cljs watch script",
     "build": "shadow-cljs release script"
